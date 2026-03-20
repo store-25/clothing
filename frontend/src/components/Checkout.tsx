@@ -122,7 +122,6 @@ export default function Checkout({ setCurrentPage }: CheckoutProps = {}) {
         discount_amount: discount,
         final_amount: final_total,
         coupon_code: appliedCoupon ? appliedCoupon.code : undefined,
-        payment_id: 'PAY_' + Date.now(), // Add payment ID
         order_status: 'pending'
       };
 

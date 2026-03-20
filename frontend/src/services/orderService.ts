@@ -36,7 +36,6 @@ export interface Order {
   discount_amount: number
   final_amount: number
   coupon_code?: string
-  payment_id: string
   order_status: string
   notes?: string
   created_at?: string
@@ -110,7 +109,6 @@ export class OrderService {
         subtotal: whatsappData.total_amount,
         discount_amount: 0,
         final_amount: whatsappData.total_amount,
-        payment_id: `WA_PAY_${Date.now()}`,
         order_status: 'pending',
         notes: `Order from WhatsApp: ${whatsappData.message_text.substring(0, 100)}...`
       }
