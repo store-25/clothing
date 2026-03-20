@@ -1,0 +1,21 @@
+{
+  "name": "Test Product",
+  "price": 299,
+  "mrp": 499,
+  "category": "tops",
+  "gender": "male",
+  "description": "Test description",
+  "stock": 10,
+  "status": "active",
+  "sizes": ["M"],
+  "colors": ["Black"],
+  "variants": [
+    {
+      "size": "M",
+      "color": "Black",
+      "stock": 10,
+      "sku": "test-product",
+      "price": 299
+    }
+  ]
+}
