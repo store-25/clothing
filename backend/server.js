@@ -316,6 +316,20 @@ app.get('/api/placeholder-product.jpg', (req, res) => {
   res.send(buffer);
 });
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Store25 Backend API is running',
+    status: 'OK',
+    endpoints: {
+      health: '/api/health',
+      products: '/api/products',
+      orders: '/api/orders',
+      admin: '/api/admin/*'
+    }
+  });
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ 
