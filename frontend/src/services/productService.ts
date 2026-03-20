@@ -146,7 +146,7 @@ export class ProductService {
   // Transform product data for website display
   static transformProductForDisplay(product: Product) {
     // Handle multiple images - use primary image or first image
-    let imageUrl = 'http://localhost:5001/api/placeholder-product.jpg';
+    let imageUrl = 'https://clothing-guxz.onrender.com/api/placeholder-product.jpg';
     let allImages: any[] = [];
     
     if (product.images && product.images.length > 0) {
@@ -163,7 +163,7 @@ export class ProductService {
           img_url = img.url;
         } else if (img.url.startsWith('/api/')) {
           // API-relative URL - construct full URL
-          img_url = `http://localhost:5001${img.url}`;
+          img_url = `https://clothing-guxz.onrender.com${img.url}`;
         } else {
           // Relative path or placeholder - use as-is
           img_url = img.url;
@@ -185,7 +185,7 @@ export class ProductService {
       } else if (primaryImage.url.startsWith('http')) {
         imageUrl = primaryImage.url;
       } else if (primaryImage.url.startsWith('/api/')) {
-        imageUrl = `http://localhost:5001${primaryImage.url}`;
+        imageUrl = `https://clothing-guxz.onrender.com${primaryImage.url}`;
       } else {
         imageUrl = primaryImage.url;
       }
@@ -196,7 +196,7 @@ export class ProductService {
       } else if (product.image.startsWith('http')) {
         imageUrl = product.image;
       } else if (product.image.startsWith('/api/')) {
-        imageUrl = `http://localhost:5001${product.image}`;
+        imageUrl = `https://clothing-guxz.onrender.com${product.image}`;
       } else {
         imageUrl = product.image;
       }
@@ -239,7 +239,7 @@ export class ProductService {
           img_url = img.url;
         } else if (img.url.startsWith('/api/')) {
           // API-relative URL - construct full URL
-          img_url = `http://localhost:5001${img.url}`;
+          img_url = `https://clothing-guxz.onrender.com${img.url}`;
         } else {
           // Relative path or placeholder - use as-is
           img_url = img.url;

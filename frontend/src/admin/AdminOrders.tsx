@@ -37,7 +37,7 @@ export default function AdminOrders({ setCurrentPage }: AdminOrdersProps) {
       console.log('📡 Fetching orders from admin API...');
       
       // Fetch orders from admin API
-      const response = await fetch('http://localhost:5001/api/admin/orders', {
+      const response = await fetch('https://clothing-guxz.onrender.com/api/admin/orders', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -86,7 +86,7 @@ export default function AdminOrders({ setCurrentPage }: AdminOrdersProps) {
   const updateOrderStatus = async (orderId: string, newStatus: string) => {
     try {
       // Update order status via API
-      const response = await fetch(`http://localhost:5001/api/admin/orders/${orderId}/status`, {
+      const response = await fetch(`https://clothing-guxz.onrender.com/api/admin/orders/${orderId}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -300,7 +300,7 @@ export default function AdminOrders({ setCurrentPage }: AdminOrdersProps) {
       }
 
       // Call the API endpoint directly
-      const response = await fetch(`http://localhost:5001/api/orders/report?startDate=${reportStartDate}&endDate=${reportEndDate}`, {
+      const response = await fetch(`https://clothing-guxz.onrender.com/api/orders/report?startDate=${reportStartDate}&endDate=${reportEndDate}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'text/csv'
