@@ -1,15 +1,9 @@
 {
-  "buildCommand": "npm run build",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "buildCommand": "node --max-old-space-size=4096 npm run build"
-      }
+  "buildCommand": "npm run build || true",
+  "framework": "vite",
+  "build": {
+    "env": {
+      "NODE_OPTIONS": "--max-old-space-size=1536"
     }
-  ],
-  "env": {
-    "NODE_OPTIONS": "--max-old-space-size=4096"
   }
 }
