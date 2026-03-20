@@ -1,5 +1,5 @@
 // API service for MERN stack communication
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://clothing-guxz.onrender.com/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://store25-0ven.onrender.com/api';
 
 export interface Product {
   _id: string;
@@ -309,7 +309,7 @@ class ApiService {
       console.log('🔑 API: Admin token available:', !!this.getAdminToken());
       
       // Use direct URL for admin routes (without /api prefix)
-      const response = await fetch(`https://clothing-guxz.onrender.com/admin/coupons`, {
+      const response = await fetch(`https://store25-0ven.onrender.com/admin/coupons`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -365,7 +365,7 @@ class ApiService {
   }
 
   async updateCoupon(id: string, data: any): Promise<any> {
-    const response = await fetch(`https://clothing-guxz.onrender.com/admin/coupons/${id}`, {
+    const response = await fetch(`https://store25-0ven.onrender.com/admin/coupons/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -382,7 +382,7 @@ class ApiService {
   }
 
   async deleteCoupon(id: string): Promise<any> {
-    const response = await fetch(`https://clothing-guxz.onrender.com/admin/coupons/${id}`, {
+    const response = await fetch(`https://store25-0ven.onrender.com/admin/coupons/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

@@ -1,6 +1,6 @@
 // Order Service - Backend API Integration (No Supabase)
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://clothing-guxz.onrender.com/api'
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://store25-0ven.onrender.com/api'
 
 export interface OrderItem {
   id: string

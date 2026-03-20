@@ -124,20 +124,20 @@ export default function ProductDetail({ productId, onBack, setCurrentPage, onPro
 
   // Helper function to get the correct image URL
   const getImageUrl = (product: Product) => {
-    let imageUrl = 'https://clothing-guxz.onrender.com/api/placeholder-product.jpg'
+    let imageUrl = 'https://store25-0ven.onrender.com/api/placeholder-product.jpg'
     
     // Check if product has images array with primary image
     if (product.images && product.images.length > 0) {
       const primaryImage = product.images.find(img => img.isPrimary) || product.images[0]
       imageUrl = primaryImage.url.startsWith('data:') || primaryImage.url.startsWith('http') 
         ? primaryImage.url 
-        : `https://clothing-guxz.onrender.com${primaryImage.url}`
+        : `https://store25-0ven.onrender.com${primaryImage.url}`
     }
     // Fallback to single image property
     else if (product.image) {
       imageUrl = product.image.startsWith('data:') || product.image.startsWith('http') 
         ? product.image 
-        : `https://clothing-guxz.onrender.com${product.image}`
+        : `https://store25-0ven.onrender.com${product.image}`
     }
     
     console.log('🖼️ Image URL for', product.name, ':', imageUrl)
@@ -230,7 +230,7 @@ export default function ProductDetail({ productId, onBack, setCurrentPage, onPro
                     }`}
                   >
                     <img
-                      src={image.url.startsWith('data:') || image.url.startsWith('http') ? image.url : `https://clothing-guxz.onrender.com${image.url}`}
+                      src={image.url.startsWith('data:') || image.url.startsWith('http') ? image.url : `https://store25-0ven.onrender.com${image.url}`}
                       alt={image.alt || `${product.name} ${index + 1}`}
                       className="w-full h-full object-cover hover:scale-105 transition-transform"
                       onClick={() => setSelectedImageIndex(index)}

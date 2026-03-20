@@ -35,12 +35,12 @@ export default function ProductCard({
       const primaryImage = images.find(img => img.isPrimary) || images[0]
       return primaryImage.url.startsWith('data:') || primaryImage.url.startsWith('http') 
         ? primaryImage.url 
-        : `https://clothing-guxz.onrender.com${primaryImage.url}`
+        : `https://store25-0ven.onrender.com${primaryImage.url}`
     }
     // Fallback to single image property
     return image.startsWith('data:') || image.startsWith('http') 
       ? image 
-      : `https://clothing-guxz.onrender.com${image}`
+      : `https://store25-0ven.onrender.com${image}`
   }
 
   // Check if product is in cart and get quantity

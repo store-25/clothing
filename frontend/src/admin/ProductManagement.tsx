@@ -4,7 +4,7 @@ import { api, type Product } from '../services/api'
 import ProductService from '../services/productService'
 import CartService from '../services/cartService'
 
-const API_BASE_URL = 'https://clothing-guxz.onrender.com';
+const API_BASE_URL = 'https://store25-0ven.onrender.com';
 
 interface ProductManagementProps {
   setCurrentPage?: (page: string) => void

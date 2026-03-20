@@ -11,7 +11,7 @@ export interface CartItem {
   image: string
 }
 
-const API_BASE_URL = 'https://clothing-guxz.onrender.com/api';
+const API_BASE_URL = 'https://store25-0ven.onrender.com/api';
 
 export interface CouponDiscount {
   success: boolean;
