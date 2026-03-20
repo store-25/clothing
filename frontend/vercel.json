@@ -3,6 +3,7 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "installCommand": "npm install",
+  "maxDuration": 300,
   "build": {
     "env": {
       "NODE_OPTIONS": "--max-old-space-size=1536"
