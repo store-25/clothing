@@ -1,12 +1,12 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "framework": "vite",
+  "framework": null,
   "installCommand": "npm install",
-  "maxDuration": 300,
+  "maxDuration": 600,
   "build": {
     "env": {
-      "NODE_OPTIONS": "--max-old-space-size=1536"
+      "NODE_OPTIONS": "--max-old-space-size=1024"
     }
   }
 }
