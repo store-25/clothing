@@ -1,6 +1,8 @@
 {
-  "buildCommand": "npm run build || true",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "framework": "vite",
+  "installCommand": "npm install",
   "build": {
     "env": {
       "NODE_OPTIONS": "--max-old-space-size=1536"

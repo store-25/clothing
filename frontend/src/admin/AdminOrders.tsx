@@ -159,8 +159,8 @@ export default function AdminOrders({ setCurrentPage }: AdminOrdersProps) {
     // Bill To Section
     yPosition = addText('BILL TO:', margin, yPosition, 14, 'bold');
     yPosition = addText(order.user_name || 'Customer Name', margin, yPosition);
-    yPosition = addText(order.address || 'Customer Address', margin, yPosition);
-    yPosition = addText(`${order.user_email || 'Email'} | ${order.phone || 'Phone'}`, margin, yPosition);
+    yPosition = addText(order.shipping_address?.street || 'Customer Address', margin, yPosition);
+    yPosition = addText(`${order.user_email || 'Email'} | ${order.user_phone || 'Phone'}`, margin, yPosition);
     yPosition += 10;
     
     // Order Details
@@ -194,7 +194,7 @@ export default function AdminOrders({ setCurrentPage }: AdminOrdersProps) {
     
     // Add products
     let subtotal = 0;
-    order.products?.forEach((item: any, index: number) => {
+    order.items?.forEach((item: any, index: number) => {
       if (yPosition > 250) {
         doc.addPage();
         yPosition = margin;
@@ -469,8 +469,8 @@ export default function AdminOrders({ setCurrentPage }: AdminOrdersProps) {
                         <div className="space-y-2 text-sm">
                           <p><strong>Name:</strong> {order.user_name}</p>
                           <p><strong>Email:</strong> {order.user_email}</p>
-                          <p><strong>Phone:</strong> {order.phone}</p>
-                          <p><strong>Address:</strong> {order.address}</p>
+                          <p><strong>Phone:</strong> {order.user_phone}</p>
+                          <p><strong>Address:</strong> {order.shipping_address?.street}</p>
                         </div>
                       </div>
 
@@ -478,7 +478,7 @@ export default function AdminOrders({ setCurrentPage }: AdminOrdersProps) {
                       <div>
                         <h4 className="font-semibold mb-3">Order Summary</h4>
                         <div className="space-y-2 text-sm">
-                          <p><strong>Subtotal:</strong> ₹{order.total_amount?.toFixed(2)}</p>
+                          <p><strong>Subtotal:</strong> ₹{order.subtotal?.toFixed(2)}</p>
                           <p><strong>Shipping:</strong> ₹0.00</p>
                           <p><strong>Tax:</strong> ₹0.00</p>
                           {order.discount_amount && order.discount_amount > 0 && (
@@ -496,7 +496,7 @@ export default function AdminOrders({ setCurrentPage }: AdminOrdersProps) {
                     <div className="mt-6">
                       <h4 className="font-semibold mb-3">Order Items</h4>
                       <div className="space-y-2">
-                        {order.products?.map((item: any, index: number) => (
+                        {order.items?.map((item: any, index: number) => (
                           <div key={index} className="flex justify-between items-center p-3 bg-gray-50 rounded">
                             <div className="flex items-center gap-3">
                               <div className="w-12 h-12 bg-gray-200 rounded flex items-center justify-center">

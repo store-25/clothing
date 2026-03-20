@@ -16,19 +16,27 @@ export interface Order {
   order_id: string
   user_name: string
   user_email: string
-  phone: string
-  address: string
-  products: Array<{
-    name: string
-    quantity: number
+  user_phone: string
+  shipping_address: {
+    street: string
+    city: string
+    state: string
+    pincode: string
+    phone: string
+  }
+  items: Array<{
+    product_id: string
+    product_name: string
     price: number
-    size?: string
-    color?: string
+    quantity: number
+    size: string
+    color: string
   }>
-  total_amount: number
+  subtotal: number
   discount_amount: number
   final_amount: number
   coupon_code?: string
+  payment_id: string
   order_status: string
   notes?: string
   created_at?: string
@@ -83,20 +91,26 @@ export class OrderService {
         order_id: `WA_${Date.now()}_${whatsappData.whatsapp_message_id}`,
         user_name: whatsappData.customer_name,
         user_email: `${whatsappData.customer_phone}@whatsapp.local`, // Generate email from phone
-        phone: whatsappData.customer_phone,
-        address: whatsappData.customer_address,
-        products: whatsappData.products.map((product, index) => ({
-          id: `wa_product_${index}`,
-          name: product.name,
+        user_phone: whatsappData.customer_phone,
+        shipping_address: {
+          street: whatsappData.customer_address,
+          city: 'City', // Default city
+          state: 'State', // Default state
+          pincode: '000000', // Default pincode
+          phone: whatsappData.customer_phone
+        },
+        items: whatsappData.products.map((product, index) => ({
+          product_id: `wa_product_${index}`,
+          product_name: product.name,
           quantity: product.quantity,
           price: product.price,
           size: product.size || 'N/A',
-          color: product.color || 'N/A',
-          image: `${API_BASE_URL.replace('/api', '')}/api/placeholder-product.jpg` // Default image
+          color: product.color || 'N/A'
         })),
-        total_amount: whatsappData.total_amount,
+        subtotal: whatsappData.total_amount,
         discount_amount: 0,
         final_amount: whatsappData.total_amount,
+        payment_id: `WA_PAY_${Date.now()}`,
         order_status: 'pending',
         notes: `Order from WhatsApp: ${whatsappData.message_text.substring(0, 100)}...`
       }

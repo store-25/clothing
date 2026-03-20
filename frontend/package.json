@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node --max-old-space-size=1536 tsc && vite build",
+    "build": "npx tsc && vite build",
     "preview": "node --max-old-space-size=4096 vite preview"
   },
   "dependencies": {
