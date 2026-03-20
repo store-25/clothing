@@ -31,8 +31,8 @@ const upload = multer({
 
 // Admin authentication
 const JWT_SECRET = process.env.JWT_SECRET || 'please-change-this-secret';
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@store25.com';
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'Abhinay@1';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'Thalaiva';
 
 function generateAdminToken(payload) {
   return jwt.sign(payload, JWT_SECRET, { expiresIn: '8h' });
