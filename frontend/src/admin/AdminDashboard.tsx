@@ -160,30 +160,30 @@ export default function AdminDashboard({ setCurrentPage }: AdminDashboardProps) 
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Welcome, Abhinay</h1>
-            <div className="flex flex-wrap items-center gap-1">
+            <div className="flex items-center gap-1 sm:gap-2 overflow-x-auto">
               <button 
                 onClick={() => setCurrentPage?.('admin-product-management')}
-                className="bg-blue-500 text-white px-2 py-2 sm:px-3 sm:py-2 rounded-lg hover:bg-blue-600 transition flex items-center gap-2 text-sm sm:text-base"
+                className="bg-blue-500 text-white px-2 py-2 sm:px-3 sm:py-2 rounded-lg hover:bg-blue-600 transition flex items-center gap-2 text-xs sm:text-sm flex-shrink-0"
               >
-                <Settings size={18} className="sm:w-5 sm:h-5" />
-                <span className="hidden sm:inline">Product Management</span>
-                <span className="sm:hidden">Products</span>
+                <Settings size={16} className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="hidden xs:inline sm:inline">Product Management</span>
+                <span className="xs:hidden sm:hidden">Products</span>
               </button>
               <button 
                 onClick={() => setCurrentPage?.('admin-coupons')}
-                className="bg-purple-500 text-white px-2 py-2 sm:px-3 sm:py-2 rounded-lg hover:bg-purple-600 transition flex items-center gap-2 text-sm sm:text-base"
+                className="bg-purple-500 text-white px-2 py-2 sm:px-3 sm:py-2 rounded-lg hover:bg-purple-600 transition flex items-center gap-2 text-xs sm:text-sm flex-shrink-0"
               >
-                <DollarSign size={18} className="sm:w-5 sm:h-5" />
-                <span className="hidden sm:inline">Manage Coupons</span>
-                <span className="sm:hidden">Coupons</span>
+                <DollarSign size={16} className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="hidden xs:inline sm:inline">Manage Coupons</span>
+                <span className="xs:hidden sm:hidden">Coupons</span>
               </button>
               <button 
                 onClick={() => setCurrentPage?.('admin-orders')}
-                className="bg-green-500 text-white px-2 py-2 sm:px-3 sm:py-2 rounded-lg hover:bg-green-600 transition flex items-center gap-2 text-sm sm:text-base"
+                className="bg-green-500 text-white px-2 py-2 sm:px-3 sm:py-2 rounded-lg hover:bg-green-600 transition flex items-center gap-2 text-xs sm:text-sm flex-shrink-0"
               >
-                <ShoppingCart size={18} className="sm:w-5 sm:h-5" />
-                <span className="hidden sm:inline">View Orders</span>
-                <span className="sm:hidden">Orders</span>
+                <ShoppingCart size={16} className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="hidden xs:inline sm:inline">View Orders</span>
+                <span className="xs:hidden sm:hidden">Orders</span>
               </button>
               <button 
                 onClick={() => {
@@ -192,11 +192,11 @@ export default function AdminDashboard({ setCurrentPage }: AdminDashboardProps) 
                   setCurrentPage?.('home')
                   window.location.href = '/'
                 }}
-                className="bg-red-500 text-white px-2 py-2 sm:px-3 sm:py-2 rounded-lg hover:bg-red-600 transition flex items-center gap-2 text-sm sm:text-base"
+                className="bg-red-500 text-white px-2 py-2 sm:px-3 sm:py-2 rounded-lg hover:bg-red-600 transition flex items-center gap-2 text-xs sm:text-sm flex-shrink-0"
               >
-                <LogOut size={18} className="sm:w-5 sm:h-5" />
-                <span className="hidden sm:inline">Logout</span>
-                <span className="sm:hidden">Logout</span>
+                <LogOut size={16} className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="hidden xs:inline sm:inline">Logout</span>
+                <span className="xs:hidden sm:hidden">Logout</span>
               </button>
             </div>
           </div>
