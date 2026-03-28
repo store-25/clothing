@@ -172,7 +172,7 @@ app.get('/api/products', async (req, res) => {
       ];
     }
 
-    const products = await Product.find(filter).sort({ createdAt: -1 });
+    const products = await Product.find(filter).sort({ createdAt: -1 }).limit(1000);
     
     // Debug: Log what server is returning
     console.log('🔍 Server returning products:', products.map(p => ({
